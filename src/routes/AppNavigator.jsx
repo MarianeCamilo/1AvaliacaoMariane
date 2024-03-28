@@ -1,20 +1,50 @@
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import HomeScreen from "../screens/HomeScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import LoginScreen from "../screens/LoginScreen";
+import RecuperarSenhaScreen from "../screens/RecuperarSenhaScreen";
+import RegistroScreen from "../screens/RegistroScreen";
+import { NavigationContainer } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
-const Tabs = createMaterialBottomTabNavigator();
 
-export default function AppNavigator(){
-    return(
-        <Stack.Navigator>
-            <Stack.Screen name="HomeScreen" component={HomeScreen}/>
-            <Stack.Screen name="LoginScreen" component={LoginScreen}/>
-            <Stack.Screen name="RegisterScreen" component={RegisterScreen}/>
-            <Stack.Screen name="RecoveryPasswordScreen" component={RecoveryPasswordScreen}/>
-            <Stack.Screen name="Search" component={Search}/>
-        </Stack.Navigator>
-    )
-
-    
+export default function AppNavigation() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={{
+            title: "Login",
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="RegistroScreen"
+          component={RegistroScreen}
+          options={{
+            title: "Registrar-se",
+            // headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="RecuperarSenhaScreen"
+          component={RecuperarSenhaScreen}
+          options={{
+            title: "Recuperar senha",
+            // headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{
+            title: "Página Inicial",
+            headerShown: false,
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
