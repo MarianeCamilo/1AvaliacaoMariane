@@ -28,27 +28,39 @@ export default function LoginScreen({navigation}){
                     value= {usuario}
                     onChangeText= {setUsuario}
                 />
-                <TextInput
-                    style= {styles.inputText}
-                    label= "Senha"
-                    value= {senha}
-                    onChangeText= {setSenha}
+                    <TextInput
+                    label="Email"
+                    mode="outlined"
+                    keyboardType="email-address"
+                    value={email}
+                    onChangeText={setEmail}
+                    />
+                    <TextInput
+                    label="Senha"
+                    mode="outlined"
                     secureTextEntry
-                />
-                <Button
-                style={styles.spaceTop}
-                mode="contained"
-                onPress={handleLogin}
-                loading={loading}
-                >
-                  Entrar
-                </Button>
-                <Button onPress={() => navigation.navigate("RecoveryPasswordScreen")}>
-                  Esqueci minha senha
-                </Button>
-                <Button onPress={() => navigation.navigate("RegisterScreen")}>
-                  Cadastre-se
-                </Button>
+                    value={senha}
+                    onChangeText={setSenha}
+                    />
+                    <Button onPress={() => navigation.navigate("RecuperarSenhaScreen")}>
+                    Recuperar senha
+                    </Button>
+                    <Button onPress={() => navigation.navigate("RegistroScreen")}>
+                    Registre-se
+                    </Button>
+                    <Button
+                    mode="outlined"
+                    // style="margin-top: 10px;" html
+                    style={{
+                        // em react-native
+                        marginTop: 10,
+                        maxWidth: 260,
+                        alignSelf: "flex-end",
+                    }}
+                    onPress={fazerLogin}
+                    >
+                    Entrar
+                    </Button>
             </View>
         </View>
     )
