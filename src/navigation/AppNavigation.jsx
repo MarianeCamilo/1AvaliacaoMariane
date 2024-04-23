@@ -40,7 +40,7 @@ export default function AppNavigation() {
           component={HomeScreen}
           options={{
             title: "Página Inicial",
-            headerShown: false,
+            // headerShown: false,
           }}
         />
       </Stack.Navigator>
