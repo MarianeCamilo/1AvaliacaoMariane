@@ -1,17 +1,22 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBpkxOd5IVA_dG_5Np9boBIjHHdzbklLkY",
-  authDomain: "appreactnative-d683a.firebaseapp.com",
-  projectId: "appreactnative-d683a",
-  storageBucket: "appreactnative-d683a.appspot.com",
-  messagingSenderId: "368240821957",
-  appId: "1:368240821957:web:244cd72f18e98fbda992ac"
+  apiKey: "AIzaSyA041C2B8K1oPY0uCGKssb8MONjCyUVBTc",
+  authDomain: "f-meu-app-react-native.firebaseapp.com",
+  projectId: "f-meu-app-react-native",
+  storageBucket: "f-meu-app-react-native.appspot.com",
+  messagingSenderId: "125553490068",
+  appId: "1:125553490068:web:fd6618e07818782da7dc81",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+export const db = getFirestore(app);
+export default auth;

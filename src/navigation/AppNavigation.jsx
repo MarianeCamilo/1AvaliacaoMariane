@@ -4,7 +4,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import LoginScreen from "../screens/LoginScreen";
 import RecuperarSenhaScreen from "../screens/RecuperarSenhaScreen";
 import RegistroScreen from "../screens/RegistroScreen";
-import { NavigationContainer } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
 
